@@ -1,4 +1,5 @@
 # Simple vue-select example in Vue3.
+Example using vue-select, v-bind selected result, "watch" for changes
 
 ## Open questions:
 How to get vue-select package in codesandbox/github combination? (Create in codesandbox alone via Dependencies and THEN transfer to github works, but how do add-on on a project that already uses sandbox+github editor? I can't find the "dependencies" button there and a "npm install vue-select" does not work)
