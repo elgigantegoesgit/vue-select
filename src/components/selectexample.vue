@@ -1,10 +1,10 @@
 <template>
   <div class="hello">
-    <v-select :options="options"></v-select>
+    <v-select :options="options" v-model="mydata"></v-select>
     <h1>{{ msg }}</h1>
-    <p>vue-selct example...</p>
+    <p @click="mymeth">vue-selct example...</p>
 
-    <h3>end of template</h3>
+    <h3>Teststring: {{ mydata }}</h3>
   </div>
 </template>
 
@@ -14,11 +14,23 @@ export default {
   data() {
     return {
       options: ["foo", "bar", "baz"],
+      mydata: "teststring"
     };
   },
-  props: {
-    msg: String,
+  watch: {
+    mydata(val, oldVal) {
+      alert("new: ${val}, old: ${oldVal}"); // mind ${var}: see template literals!
+      console.log(val + oldVal);
+    }
   },
+  props: {
+    msg: String
+  },
+  methods: {
+    mymeth() {
+      alert("jo");
+    }
+  }
 };
 </script>
 
