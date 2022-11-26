@@ -14,23 +14,29 @@ export default {
   data() {
     return {
       options: ["foo", "bar", "baz"],
-      mydata: "teststring"
+      mydata: "teststring",
     };
   },
   watch: {
     mydata(val, oldVal) {
-      alert("new: ${val}, old: ${oldVal}"); // mind ${var}: see template literals!
+      alert(
+        "new: " +
+          val +
+          ", old: " +
+          oldVal +
+          " \n (with literals:) new: ${val}, old: ${oldVal}"
+      ); // mind ${var}: see template literals!
       console.log(val + oldVal);
-    }
+    },
   },
   props: {
-    msg: String
+    msg: String,
   },
   methods: {
     mymeth() {
       alert("jo");
-    }
-  }
+    },
+  },
 };
 </script>
 
